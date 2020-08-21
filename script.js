@@ -1,10 +1,19 @@
-function checkDriverAge() {
-var age = prompt("What is your age?");
-if (Number(age) < 18) {
-	alert("Sorry, you are too young to drive this car. Powering off");
-} else if (Number(age) > 18) {
-	alert("Powering On. Enjoy the ride!");
-} else if (Number(age) === 18) {
-	alert("Congratulations on your first year of driving. Enjoy the ride!");
+var css = document.querySelector("h3");
+var color1 = document.querySelector(".color1");
+var color2 = document.querySelector(".color2");
+var body = document.getElementById("gradient");
+
+function setGradient() {
+	body.style.background = 
+	"linear-gradient(to right, " 
+	+ color1.value 
+	+ ", " 
+	+ color2.value 
+	+ ")";
+
+	css.textContent = body.style.background + ";";
 }
-}
+
+color1.addEventListener("input", setGradient);
+
+color2.addEventListener("input", setGradient);
